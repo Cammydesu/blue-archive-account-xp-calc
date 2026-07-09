@@ -103,7 +103,7 @@ function Calculate(){
         totalAPNeeded += XPNeeded[i] / currentMultiplier;
     }
     
-    let LevelUpAP = APForLevelUp(SimCurrentLevel);
+    let LevelUpAP = APForLevelUp(SimCurrentLevel, SimTargetLevel);
     let CafeAP = Math.floor(APFromCafeHourly(SimCafeLevel) * 24);
     let RefreshAP = SimAPRefreshes * 120;
     let TacticalChallengeAP = SimTacticalChallengeRefreshes * 90;
@@ -115,9 +115,10 @@ function Calculate(){
     let TotalPyroSpent = PyroSpent * days;
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
     let YMD = YearMonthDay(days)
+
     document.getElementById("ResultTime").innerText = `${days} days ${YMD}`;
     document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${Math.round(totalAPNeeded - LevelUpAP).toLocaleString()} AP)`;
-    document.getElementById("ResultAPRates").innerText = `$Daily: ${TotalDailyAP} AP | Weekly: ${TotalWeeklyAP} AP`;
+    document.getElementById("ResultAPRates").innerText = `Daily: ${TotalDailyAP} AP | Weekly: ${TotalWeeklyAP} AP`;
     document.getElementById("ResultDailyCost").innerText = `💎 ${PyroSpent} / 🔵 ${TCCoinsSpent} Coins`;
     document.getElementById("ResultTotalPyroxenes").innerText = `${TotalPyroSpent.toLocaleString()} Pyroxenes (${pulls} ${pulls === 1 ? 'pull' : 'pulls'})`;
     document.getElementById("ResultTotalCoins").innerText = `${(TCCoinsSpent * days).toLocaleString()} Coins`
