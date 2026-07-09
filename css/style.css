@@ -15,8 +15,8 @@ body {
     border: 2px solid #111926;
     border-radius: 26px;
     padding: 40px;
-    width:100%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 640px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 1);
     animation: SlideDownAndFadeIn 1s cubic-bezier(0.4, 0.8, 0.5, 1) forwards;
 }
@@ -39,7 +39,7 @@ body {
     color: #2c3e60;
     text-align: center;
     margin: 0 0 28px 0;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .form-layout {
@@ -56,9 +56,9 @@ body {
 }
 
 label {
-    font-size: 15px;
+    font-size: 20px;
     color: #b0b0b0;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-weight: 630;
 }
 
@@ -67,8 +67,8 @@ input {
     border: 1px solid #374151;
     border-radius: 6px;
     color: #ffffff;
-    padding: 10px 14px;
-    font-size: 14px;
+    padding: 16px 20px;
+    font-size: 18px;
     transition: border-color 0.52s;
 }
 
@@ -86,7 +86,7 @@ button {
     padding: 12px 20px;
     width: 100%;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     cursor: pointer;
     overflow: hidden;
     transition: background-color 0.45s;
@@ -118,7 +118,7 @@ button span, button div, .button-text-anchor {
     margin-top: 28px;
     background-color: #030712;
     border-radius: 12px;
-    padding: 10px 15px;
+    padding: 15px 20px;
     border-left: 4px solid #38bdf8;
 }
 
@@ -128,7 +128,7 @@ button span, button div, .button-text-anchor {
 
 .output-wrapper h3 {
     margin: 0 0 16px 0;
-    font-size: 18px;
+    font-size: 30px;
     color: #38bdf8;
     border-bottom: 1px solid #1f2937;
     padding-bottom: 5px;
@@ -163,7 +163,7 @@ button span, button div, .button-text-anchor {
 .metric {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #9ca9be;
 }
@@ -184,6 +184,10 @@ button span, button div, .button-text-anchor {
     -webkit-text-fill-color: transparent;
     color: transparent;
     display: inline-block;
+    width: 100%;
 }
 
-
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
