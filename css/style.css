@@ -1,41 +1,53 @@
+html, body {
+    background-color: #0b0f19 !important;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #0b0f19;
     color: #ffffff;
     font-family: system-ui, -apple-system, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;           
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    padding: 60px 20px;
+    overflow-x: hidden;
+    overflow-y: auto !important; 
+    box-sizing: border-box;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .panel-container {
     background-color: #111827;
     border: 2px solid #111926;
     border-radius: 26px;
-    padding: 40px;
-    width: 100%;
-    max-width: 640px;
+    padding: clamp(20px, 5vw, 36px);
+    width: 100% !important;              
+    max-width: 720px !important;
+    margin: 0 auto;        
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 1);
+    word-wrap: break-word;
+    box-sizing: border-box;
     animation: SlideDownAndFadeIn 1s cubic-bezier(0.4, 0.8, 0.5, 1) forwards;
 }
 
 @keyframes SlideDownAndFadeIn {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scale(0.3);
-    }
-    30% {
-        transform: scale(0.3);
+        transform: translateY(-40px);
     }
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;            
+    margin-bottom: 24px;
+    font-size: clamp(28px, 6vw, 38px);
 }
 
 .tagline {
@@ -47,7 +59,7 @@ body {
 
 .form-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 0 0 28px 0;
     gap: 15px;
     margin-bottom: 26px;
@@ -56,12 +68,15 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-label {
-    font-size: 20px;
+.form-group label {
+    font-size: clamp(14px, 1.1vw, 18px);
     color: #b0b0b0;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 630;
 }
 
@@ -70,8 +85,10 @@ input {
     border: 1px solid #374151;
     border-radius: 6px;
     color: #ffffff;
-    padding: 16px 20px;
-    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: clamp(14px, 4vw, 18px);
+    padding: clamp(10px, 2vw, 14px);
     transition: border-color 0.52s;
 }
 
@@ -86,13 +103,13 @@ button {
     color: #111827;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
     width: 100%;
     font-weight: 700;
-    font-size: 22px;
     cursor: pointer;
     overflow: hidden;
     transition: background-color 0.45s;
+    font-size: clamp(14px, 4vw, 24px);
+    padding: clamp(12px, 2vw, 16px);
 }
 
 button::before {
@@ -190,7 +207,20 @@ button span, button div, .button-text-anchor {
     width: 100%;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 24px;
+@media (min-width: 1200px) {
+    html, body {
+        overflow: hidden;
+        padding: 0;
+        height: 100vh;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+    .panel-container {
+        width: 720px !important;
+        max-width: 720px !important;
+        margin: 0;           
+    }
 }
