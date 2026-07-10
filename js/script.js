@@ -102,7 +102,11 @@ function Calculate(){
         totalXPNeeded += XPNeeded[i];
         totalAPNeeded += XPNeeded[i] / currentMultiplier;
     }
-    
+    let APMult = 1;
+    if(SimCurrentLevel < 59) APMult = 2.0;
+    if(SimCurrentLevel >= 59 && SimCurrentLevel < 69) APMult = 1.5;
+    totalXPNeeded -= SimCurrentXPInLevel;
+    totalAPNeeded -= (SimCurrentXPInLevel / APMult);
     let LevelUpAP = APForLevelUp(SimCurrentLevel, SimTargetLevel);
     let CafeAP = Math.floor(APFromCafeHourly(SimCafeLevel) * 24);
     let RefreshAP = SimAPRefreshes * 120;
@@ -114,7 +118,7 @@ function Calculate(){
     let days = LevelingSim(SimCurrentLevel, SimTargetLevel, SimCurrentXPInLevel, CalcTotalDailyAP);
     let TotalPyroSpent = PyroSpent * days;
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
-    let YMD = YearMonthDay(days)
+    let YMD = YearMonthDay(days);
 
     document.getElementById("ResultTime").innerText = `${days} days ${YMD}`;
     document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${Math.round(totalAPNeeded - LevelUpAP).toLocaleString()} AP)`;
