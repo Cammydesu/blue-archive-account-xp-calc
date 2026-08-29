@@ -28,5 +28,5 @@ Pyroxenes and Tactical Challenge coins are calculated based on how many you inpu
 
 <h1>Trademark Disclaimer</h1>
 
-This website is a non-commercial, player tool made for the game Blue Archive. I am in no way affiliated, endorsed by, or\
+This website is a non-commercial, player tool made for the game Blue Archive. I am in no way affiliated, endorsed by, or
 associated with **NEXON Korea Corp., NEXON GAMES Co., Ltd., or Yostar Co., Ltd.** These names are utilized here strictly under [**Nominative Fair Use**](https://en.wikipedia.org/wiki/Nominative_use) to describe the utility and compatibility of this software, in compliance with the [Nexon Game IP Guide for Content Creators](https://playersupport.nexon.com/hc/en-us/articles/360059079812-Nexon-Game-IP-Guide-for-Content-Creators).
