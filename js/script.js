@@ -119,11 +119,17 @@ function Calculate(){
     let TotalPyroSpent = PyroSpent * days;
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
     let YMD = YearMonthDay(days); //useless after using date
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
     const currentDate = new Date(); //switching to camelcase, i need to get more consistent lmao
     const finishDate = new Date(currentDate);
     finishDate.setDate(currentDate.getDate() + days);
 
-    document.getElementById("ResultTime").innerText = `${days} days (${finishDate})`;
+    document.getElementById("ResultTime").innerText = `${days} ${days === 1 ? 'day' : 'days'} (${formatter.format(finishDate)})`;
     document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${Math.round(totalAPNeeded - LevelUpAP).toLocaleString()} AP)`;
     document.getElementById("ResultAPRates").innerText = `Daily: ${TotalDailyAP} AP | Weekly: ${TotalWeeklyAP} AP`;
     document.getElementById("ResultDailyCost").innerText = `💎 ${PyroSpent} / 🔵 ${TCCoinsSpent} Coins`;
