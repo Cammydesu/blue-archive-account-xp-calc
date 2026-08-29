@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <button class="koyuki" onclick="takeToIncident()">Nihaha...</button>
     <div class="panel-container">
         <h1 class="gradient">Blue Archive Leveling Calculator</h1>
         <p class="tagline">Blue Archive Leveling and Resource Predictor</p>
+        <p class="disclaimer">(Does not account for 2x days)</p>
         
         <div class="form-layout">
             <div class="form-group">
@@ -46,8 +48,8 @@
             </div>
         </div>
 
-        <button onclick="Calculate()"><span>Calculate</span></button>
-
+        <button class="calculate" onclick="Calculate()"><span>Calculate</span></button>
+        
         <div id="output-panel" class="output-wrapper hidden">
         <h3>Results</h3>
             <div class="metric"><span class="label">Estimated Time:</span><span id="ResultTime" class="val">-</span></div>
@@ -58,7 +60,6 @@
             <div class="metric"><span class="label">Total Tactical Coins:</span><span id="ResultTotalCoins" class="val">-</span></div>
         </div>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 </html>

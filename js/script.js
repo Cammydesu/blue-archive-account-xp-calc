@@ -119,6 +119,7 @@ function Calculate(){
     let TotalPyroSpent = PyroSpent * days;
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
     let YMD = YearMonthDay(days); //useless after using date
+    let withLevelUpAP = Math.round(totalAPNeeded - LevelUpAP);
     const formatter = new Intl.DateTimeFormat('en-US', {
         weekday: 'short',
         day: 'numeric',
@@ -129,8 +130,8 @@ function Calculate(){
     const finishDate = new Date(currentDate);
     finishDate.setDate(currentDate.getDate() + days);
 
-    document.getElementById("ResultTime").innerText = `${days} ${days === 1 ? 'day' : 'days'} (${formatter.format(finishDate)})`;
-    document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${Math.round(totalAPNeeded - LevelUpAP).toLocaleString()} AP)`;
+    document.getElementById("ResultTime").innerText = `In ${days} ${days === 1 ? 'day' : 'days'} (${formatter.format(finishDate)})`;
+    document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${withLevelUpAP < 0 ? '0' : withLevelUpAP.toLocaleString()} AP)`;
     document.getElementById("ResultAPRates").innerText = `Daily: ${TotalDailyAP} AP | Weekly: ${TotalWeeklyAP} AP`;
     document.getElementById("ResultDailyCost").innerText = `💎 ${PyroSpent} / 🔵 ${TCCoinsSpent} Coins`;
     document.getElementById("ResultTotalPyroxenes").innerText = `${TotalPyroSpent.toLocaleString()} Pyroxenes (${pulls} ${pulls === 1 ? 'pull' : 'pulls'})`;
@@ -138,3 +139,6 @@ function Calculate(){
     document.getElementById("output-panel").classList.add("show");
 }
 
+function takeToIncident(){
+    window.open("https://cammydesu.github.io/koyuki-incident/incident/incident.html");
+}

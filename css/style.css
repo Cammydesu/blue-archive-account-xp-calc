@@ -2,6 +2,11 @@ html, body {
     background-color: #0b0f19 !important;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -46,14 +51,22 @@ body {
 h1 {
     text-align: center;
     margin-top: 0;            
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-size: clamp(28px, 6vw, 38px);
 }
 
 .tagline {
     color: #2c3e60;
     text-align: center;
-    margin: 0 0 28px 0;
+    margin-top: 2px;
+    font-size: 20px;
+}
+
+.disclaimer {
+    color: #2c3e60;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 2px;
     font-size: 20px;
 }
 
@@ -97,7 +110,7 @@ input:focus {
     outline: none;
 }
 
-button {
+.calculate {
     position: relative;
     background-color: #38bdf8;
     color: #111827;
@@ -112,7 +125,7 @@ button {
     padding: clamp(12px, 2vw, 16px);
 }
 
-button::before {
+.calculate::before {
     content: "";
     position: absolute;
     top: 0;
@@ -125,11 +138,11 @@ button::before {
     z-index: 1;
 }
 
-button:hover::before {
+.calculate:hover::before {
     opacity: 1;
 }
 
-button span, button div, .button-text-anchor {
+.calculate span, .calculate div {
     position: relative;
     z-index: 2;
 }
@@ -205,6 +218,20 @@ button span, button div, .button-text-anchor {
     color: transparent;
     display: inline-block;
     width: 100%;
+}
+
+.koyuki {
+    background-color: #F2A2BD;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    border-color: #cb4471;
+    border-width: 3px 3px 0px 3px;
+    transform: rotate(90deg);
+    position: fixed;
+    top: 10%;
+    left: -15px;
+    text-align: center;
+    color: #760261;
 }
 
 @media (min-width: 1200px) {
