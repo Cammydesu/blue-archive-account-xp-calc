@@ -118,9 +118,12 @@ function Calculate(){
     let days = LevelingSim(SimCurrentLevel, SimTargetLevel, SimCurrentXPInLevel, CalcTotalDailyAP);
     let TotalPyroSpent = PyroSpent * days;
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
-    let YMD = YearMonthDay(days);
+    let YMD = YearMonthDay(days); //useless after using date
+    const currentDate = new Date(); //switching to camelcase, i need to get more consistent lmao
+    const finishDate = new Date(CurrentDate);
+    finishDate.setDate(currentDate.getDate() + days);
 
-    document.getElementById("ResultTime").innerText = `${days} days ${YMD}`;
+    document.getElementById("ResultTime").innerText = `${days} days (${finishDate})`;
     document.getElementById("ResultTotals").innerText = `${totalXPNeeded.toLocaleString()} XP / ${Math.round(totalAPNeeded).toLocaleString()} AP (With level up AP: ${Math.round(totalAPNeeded - LevelUpAP).toLocaleString()} AP)`;
     document.getElementById("ResultAPRates").innerText = `Daily: ${TotalDailyAP} AP | Weekly: ${TotalWeeklyAP} AP`;
     document.getElementById("ResultDailyCost").innerText = `💎 ${PyroSpent} / 🔵 ${TCCoinsSpent} Coins`;
