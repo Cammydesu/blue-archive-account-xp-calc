@@ -120,7 +120,7 @@ function Calculate(){
     let pulls = ((TotalPyroSpent) / 120).toFixed(0);
     let YMD = YearMonthDay(days); //useless after using date
     const currentDate = new Date(); //switching to camelcase, i need to get more consistent lmao
-    const finishDate = new Date(CurrentDate);
+    const finishDate = new Date(currentDate);
     finishDate.setDate(currentDate.getDate() + days);
 
     document.getElementById("ResultTime").innerText = `${days} days (${finishDate})`;
